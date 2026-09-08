@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday My dear wife Miruu ❤️</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#ff4f9a,#ff9ec4,#ffd6e7,#fff0f6,#ffb3d1);
+background-size:300% 300%;
+animation:bgMove 10s ease-in-out infinite alternate;
+height:100vh;
+position:relative;
+display:flex;
+justify-content:center;
+align-items:center;
+overflow:hidden;
+}
+
+.page{
+display:none;
+text-align:center;
+animation:fade .8s;
+padding:20px;
+position: relative;
+z-index: 2;
+}
+
+.active{
+display:block;
+}
+
+h1{
+font-size:clamp(2rem,6vw,3.5rem);
+color:#ff006e;
+margin-bottom:20px;
+text-shadow:0 0 6px #fff,0 0 14px #ff006e,0 0 30px rgba(255,0,110,.65);
+animation:glow 2s ease-in-out infinite alternate;
+}
+
+p{
+font-size:1.2rem;
+margin-bottom:30px;
+color:#444;
+}
+
+button{
+padding:15px 35px;
+font-size:20px;
+margin:10px;
+border:none;
+border-radius:50px;
+cursor:pointer;
+transition:.3s;
+}
+
+.yes{
+background:#ff006e;
+color:white;
+}
+
+.no{
+background:#666;
+color:white;
+}
+
+button:hover{
+transform:scale(1.08);
+}
+
+.card{
+background:rgba(255,255,255,.82);
+backdrop-filter:blur(14px);
+-webkit-backdrop-filter:blur(14px);
+padding:40px;
+border-radius:25px;
+box-shadow:0 15px 40px rgba(0,0,0,.2),0 0 35px rgba(255,0,110,.25);
+max-width:700px;
+animation:float 4s ease-in-out infinite;
+}
+
+@keyframes bgMove{from{background-position:0% 0%;}to{background-position:100% 100%;}}
+@keyframes glow{from{filter:drop-shadow(0 0 3px #ff006e);}to{filter:drop-shadow(0 0 15px #ff006e);}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+@keyframes fade{
+from{
+opacity:0;
+transform:scale(.9);
+}
+to{
+opacity:1;
+transform:scale(1);
+}
+}
+
+.heart{
+position:fixed;
+font-size:25px;
+animation:fall linear forwards;
+z-index: 1;
+pointer-events: none;
+}
+
+@keyframes fall{
+0%{
+transform:translateY(-10vh) rotate(0deg);
+opacity:1;
+}
+100%{
+transform:translateY(110vh) rotate(360deg);
+opacity:0;
+}
+}
+
+.big{
+font-size:80px;
+margin-bottom:20px;
+}
+
+</style>
+</head>
+<body>
+
+<!-- Birthday Page -->
+<div class="page active" id="page1">
+<div class="card">
+<div class="big">🎂</div>
+<h1>Happy Birthday My wife Miruu ❤️</h1>
+
+<p>
+Happy Birthday to the most beautiful, sweetest, and most amazing girl and my wife!<br><br>
+
+I hope your day is filled with happiness, laughter, love, and unforgettable moments.
+Thank you for being such a special part of my life.
+May all your dreams come true, today and always.
+</p>
+
+<button class="yes" onclick="next('page2')">
+Continue ❤️
+</button>
+
+</div>
+</div>
+
+<!-- Love Question 1 -->
+<div class="page" id="page2">
+<div class="card">
+<h1>One Important Question ❤️</h1>
+
+<p>Do you love me? 🥺</p>
+
+<button class="yes" onclick="next('page2_5')">
+Yes ❤️
+</button>
+
+<button class="no" onclick="next('page3')">
+No 😢
+</button>
+
+</div>
+</div>
+
+<!-- Love Question 2 -->
+<div class="page" id="page2_5">
+<div class="card">
+<h1>Another Question 💍</h1>
+
+<p>Will U Be My Wife forever and live With Me? 💍❤️</p>
+
+<button class="yes" onclick="next('page4')">
+Yes 💍❤️
+</button>
+
+<button class="no" onclick="next('page3')">
+No 😢
+</button>
+
+</div>
+</div>
+
+<!-- No Page -->
+<div class="page" id="page3">
+<div class="card">
+
+<div class="big">😅💗</div>
+<h1>Oops! By mistake 😭</h1>
+
+<p>
+I think you accidentally clicked "No". 😜<br>
+Let's take you back and try again. ❤️
+</p>
+
+<button class="yes" onclick="next('page2')">
+Take Me Back ❤️
+</button>
+
+</div>
+</div>
+
+<!-- Final -->
+<div class="page" id="page4">
+<div class="card">
+
+<div class="big">❤️</div>
+
+<h1>YAY!! ❤️</h1>
+
+<p>
+
+I knew it! 🥹❤️<br><br>
+
+Thank you for making my life brighter every single day.
+
+I promise to keep making you smile,
+supporting you,
+and loving you with all my heart.
+
+Happy Birthday once again, my beautiful Ani. 🎂❤️
+
+</p>
+
+<h2 style="color:#ff006e;">
+I Love You Forever ❤️
+</h2>
+
+</div>
+</div>
+
+<script>
+
+function next(id){
+
+document.querySelectorAll(".page").forEach(page=>{
+page.classList.remove("active");
+});
+
+document.getElementById(id).classList.add("active");
+
+}
+
+function startHearts(){
+setInterval(()=>{
+
+const heart=document.createElement("div");
+
+heart.className="heart";
+
+const heartIcons = ["❤️", "💖", "💕", "💗", "💓"];
+heart.innerHTML = heartIcons[Math.floor(Math.random() * heartIcons.length)];
+
+heart.style.left=Math.random()*100+"vw";
+
+heart.style.fontSize=(15+Math.random()*30)+"px";
+
+heart.style.animationDuration=(3+Math.random()*3)+"s";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},6000);
+
+},150);
+
+}
+
+// Automatically start hearts background when page loads
+startHearts();
+
+</script>
+
+</body>
+</html>
